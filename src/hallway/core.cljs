@@ -4,11 +4,9 @@
 
 (println "hello world")
 
-(let [canvas (.getElementById js/document "canvas")
-	  win-width (.-innerWidth js/window)
-	  win-height (.-innerHeight js/window)]
-  (set! (.-width canvas) win-width)
-  (set! (.-height canvas) win-height))
+(let [canvas (.getElementById js/document "canvas")]
+  (set! (.-width canvas) (.-innerWidth js/window))
+  (set! (.-height canvas) (.-innerHeight js/window)))
 
 (defn draw-box
   [color box-x box-y]
