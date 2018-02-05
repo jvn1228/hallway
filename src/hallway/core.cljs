@@ -23,12 +23,7 @@
 
 (defn animate-box
 	[init-x init-y timeout]
-	(loop [x init-x]
-		(when (< x (- (.-innerWidth js/window) 100))
-			(erase-ctx)
-			(draw-box "blue" x init-y)
-			(recur (inc x)))))
-			#_(js/setTimeout #(do 
-												(erase-ctx)
-												(recur (inc x)))
-										  timeout)
+	(when (< init-x (-(.-innerWidth js/window) 100))
+		(erase-ctx)
+		(draw-box "blue" init-x init-y)
+		(js/setTimeout #(animate-box (inc init-x) init-y timeout) timeout)))
