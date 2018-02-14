@@ -19,7 +19,7 @@
 	[]
 	(let [canvas (.getElementById js/document "canvas")
         ctx (.getContext canvas "2d")]
-    (.clearRect ctx 0 0 (.-innerWidth js/window) (.-innerHeight js/window))))
+	(.clearRect ctx 0 0 (.-innerWidth js/window) (.-innerHeight js/window))))
 
 (defn animate-box
 	[init-x init-y timeout]
